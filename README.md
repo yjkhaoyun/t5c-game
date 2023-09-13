@@ -1,3 +1,19 @@
+
+# 构建本地镜像(确保电脑打了了开始菜单中的docker服务)
+    docker build -t game .
+# 查看镜像id
+ docker images
+# 对镜像进行标签重命名
+    docker tag 192519a4c32e registry.cn-hangzhou.aliyuncs.com/yjkhaoyun/min-game:1.0
+# 将镜像推送到个人阿里云命名空间
+    docker push registry.cn-hangzhou.aliyuncs.com/yjkhaoyun/min-game:1.0
+# 在centOS中拉取镜像
+    docker pull registry.cn-hangzhou.aliyuncs.com/yjkhaoyun/min-game:1.0
+
+# 运行容器
+    docker run -d -p 3200:8080 --name mingame -e TZ=Asia/Shanghai registry.cn-hangzhou.aliyuncs.com/yjkhaoyun/min-game:1.0 
+
+
 # T5C - The 5th Continent
 Building a basic multiplayer 3d top down rpg using babylon.js and colyseus
 
